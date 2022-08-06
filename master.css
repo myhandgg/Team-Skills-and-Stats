@@ -1,0 +1,392 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root{
+    --main-color:#03A9F4;
+    --section-color:#F6F6F6;
+    --services-color: #B33939;
+    --designs-color: #227093;
+    --clients-color:#218C74;
+}
+
+body{
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Start Header */
+
+.containeer{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Small */
+
+@media (min-width: 768px) {
+    .containeer {
+        width:750px;
+    }
+}
+
+/* Meduim */
+
+@media (min-width: 992px) {
+    .containeer {
+        width:970px;
+    }
+}
+
+/* Large */
+
+@media (min-width: 1200px) {
+    .containeer {
+        width:1170px;
+    }
+}
+
+.parent .containeer header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header ul {
+    display: flex;
+    list-style: none;
+}
+
+header ul li{
+    padding: 10px;
+}
+
+header ul li a{
+    color:#222;
+    text-decoration: none;
+    display: block;
+}
+
+@media (max-width:425px){
+    header .links{
+        position: relative;
+    }
+    
+    header .links .icon{
+        width:30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    header .links .icon span{
+        width: 100%;
+        height: 2px;
+        margin-bottom: 4px;
+        background-color: #222;
+    }
+
+    header .links .icon span:nth-child(2){
+        width: 60%;
+        transition: .3s;
+    }
+
+    header .links:hover .icon span:nth-child(2){
+        width: 100%;
+    }
+
+    header ul{
+        position: absolute;
+        right: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        top: calc(100% + 15px);
+        min-width: 200px;
+        display: none;
+    }
+
+    header ul::before{
+        content: "";
+        position: absolute;
+        border-style: solid;
+        border-width: 10px;
+        border-color: transparent transparent #F6F6F6 transparent;
+        right: 5px;
+        top: -20px;
+    }
+
+    header ul li {
+        background-color: #F6F6F6;
+    }
+
+    header ul li {
+        padding: 15px;
+        display: block;
+        border-bottom: 1px solid rgba(168, 168, 168, 0.867);
+    }
+
+    header .links:hover ul{
+        display: block;
+    }
+}
+
+/* End Header */
+/* Start Section */
+
+.parent section{
+    background-color: var(--section-color);
+    text-align: center;
+    padding: 50px 0;
+}
+
+.parent section .title h1 span{
+    color: var(--main-color);
+}
+
+.parent section .content p{
+    line-height: 1.6;
+}
+
+@media (max-width:425px){
+    .parent section{
+        padding:15px;
+    }
+}
+
+/* End Section */
+/* Start Services */
+
+.services{
+    padding: 50px 0;
+}
+
+.services .containeer{
+    display: grid;
+    grid-template-columns: repeat(3 , auto);
+    gap: 20px;
+}
+
+@media (max-width:425px){
+    .services .containeer{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.services .box {
+    text-align: center;
+}
+
+.services .box img{
+    width: 80px;
+}
+
+.services .box .info p{
+    opacity: .5;
+    line-height: 1.6 ;
+}
+
+/* End Services */
+/* Start About */
+
+.about-us{
+    padding: 50px 0;
+    background-color: var(--section-color);
+}
+
+.about-us .containeer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.about-us .image img{
+    max-width: 500px;
+}
+
+.about-us .info p{
+    line-height: 1.6;
+}
+
+@media (max-width:768px){
+    .about-us .containeer{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .about-us .image{
+        width:100%;
+    }
+}
+
+@media (max-width:425px){
+    .about-us .image img{
+        width: 300px;
+    }
+}
+
+/* End About */
+/* Start Count */
+
+.count{
+    padding: 50px 0;
+    background-color: white !important;
+}
+
+.count .containeer{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@media (max-width:425px){
+    .count .containeer {
+        display: flex;
+        flex-direction: column;
+    }
+    .count .services ,
+    .design ,
+    .client{
+        width:100%;
+    }
+}
+
+.count h1{
+    font-size: 60px;
+    margin: 21px 0 5px 0;
+}
+
+.count .services {
+    background-color: var(--services-color);
+    color: white;
+    padding: 0;
+}
+
+.count .design{
+    background-color: var(--designs-color);
+    color: white;
+}
+
+.count .client{
+    background-color: var(--clients-color);
+    color: white;
+}
+
+/* End Count */
+/* Start Skills */
+
+.our-skills{
+    padding: 50px 0;
+    background-color: var(--section-color);
+}
+
+.our-skills .title{
+    text-align:center;
+}
+
+.language{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding-left: 50px;
+}
+
+.language .progress div span{
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.language .progress div{
+    width: 100%;
+    background-color: white;
+}
+
+.language .progress div:first-child span{
+    width: 60%;
+}
+
+.language .progress div:nth-child(2) span{
+    width: 70%;
+}
+
+.language .progress div:nth-child(3) span{
+    width: 80%;
+}
+
+.language .progress div:nth-child(4) span{
+    width: 65%;
+}
+
+.language .progress div:last-child span{
+    width: 90%;
+}
+
+.language h3{
+    padding-right: 10px;
+}
+
+.language h3{
+    margin: 0;
+    text-align: right;
+}
+
+.language .lang{
+    display: grid;
+    gap: 20px;   
+    align-items: center;
+}
+
+.language .progress{
+    display: grid;
+    gap: 20px;
+}
+
+@media (max-width:768px){
+    .language{
+        padding-left: 0;
+    }
+}
+
+/* End Skills */
+/* Start Footer */
+
+footer{
+    background-color: #333333;
+}
+
+footer .containeer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .containeer .left-side p {
+    color: white;
+}
+
+footer .containeer .left-side p span{
+    color: var(--main-color);
+}
+
+footer .containeer .right-side p{
+    color: white;
+}
+
+@media (max-width:425px){
+    footer .containeer{
+        flex-direction: column;
+    }
+}
+
+/* End Footer */
